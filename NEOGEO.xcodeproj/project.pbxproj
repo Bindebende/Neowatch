@@ -9,12 +9,21 @@
 /* Begin PBXBuildFile section */
 		1DA8E2791A193243003A4011 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8E2781A193243003A4011 /* main.c */; };
 		1DA8E27C1A193243003A4011 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8E27B1A193243003A4011 /* Makefile */; };
+		1DA8E2901A193467003A4011 /* GPS.c in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8E28E1A193467003A4011 /* GPS.c */; };
+		1DA8E2931A1934D2003A4011 /* MCP9808.c in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8E2911A1934D2003A4011 /* MCP9808.c */; };
+		1DA8E2961A193687003A4011 /* LSM303.c in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8E2941A193687003A4011 /* LSM303.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1DA8E2751A193243003A4011 /* Index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Index; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA8E2781A193243003A4011 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		1DA8E27B1A193243003A4011 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		1DA8E28E1A193467003A4011 /* GPS.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GPS.c; sourceTree = "<group>"; };
+		1DA8E28F1A193467003A4011 /* GPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPS.h; sourceTree = "<group>"; };
+		1DA8E2911A1934D2003A4011 /* MCP9808.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MCP9808.c; sourceTree = "<group>"; };
+		1DA8E2921A1934D2003A4011 /* MCP9808.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCP9808.h; sourceTree = "<group>"; };
+		1DA8E2941A193687003A4011 /* LSM303.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LSM303.c; sourceTree = "<group>"; };
+		1DA8E2951A193687003A4011 /* LSM303.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSM303.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -38,6 +47,12 @@
 			isa = PBXGroup;
 			children = (
 				1DA8E2781A193243003A4011 /* main.c */,
+				1DA8E28E1A193467003A4011 /* GPS.c */,
+				1DA8E2911A1934D2003A4011 /* MCP9808.c */,
+				1DA8E2941A193687003A4011 /* LSM303.c */,
+				1DA8E2951A193687003A4011 /* LSM303.h */,
+				1DA8E2921A1934D2003A4011 /* MCP9808.h */,
+				1DA8E28F1A193467003A4011 /* GPS.h */,
 				1DA8E27A1A193243003A4011 /* Makefiles */,
 			);
 			path = NEOGEO;
@@ -176,8 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DA8E2901A193467003A4011 /* GPS.c in Sources */,
 				1DA8E27C1A193243003A4011 /* Makefile in Sources */,
+				1DA8E2961A193687003A4011 /* LSM303.c in Sources */,
 				1DA8E2791A193243003A4011 /* main.c in Sources */,
+				1DA8E2931A1934D2003A4011 /* MCP9808.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

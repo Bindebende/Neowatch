@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <util/delay.h>
-
-void initIO(void) {
-	
-}
+#include <inttypes.h>
+#include "GPS.h"
+#include "MCP9808.h"
+#include "LSM303.h"
 
 int main(void) {
-	initIO();
+	
 
-	while (1) {
+	while (1)
+    {
 	}
 	return 0; // never reached
 }
