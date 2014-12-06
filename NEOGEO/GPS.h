@@ -9,8 +9,7 @@
 #ifndef __NEOGEO__GPS__
 #define __NEOGEO__GPS__
 
-/*gps comands defines
- different commands to set the update rate from once a second (1 Hz) to 10 times a second (10Hz)*/
+/*gps comands defines different commands to set the update rate from once a second (1 Hz) to 10 times a second (10Hz)*/
 #define PMTK_SET_NMEA_UPDATE_1HZ  "$PMTK220,1000*1F"
 #define PMTK_SET_NMEA_UPDATE_5HZ  "$PMTK220,200*2C"
 #define PMTK_SET_NMEA_UPDATE_10HZ "$PMTK220,100*2F"
@@ -50,5 +49,5 @@
 #define PGCMD_ANTENNA "$PGCMD,33,1*6C"
 #define PGCMD_NOANTENNA "$PGCMD,33,0*6C"
 
-
+void gps_init(void);
 #endif /* defined(__NEOGEO__GPS__) */

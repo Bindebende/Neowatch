@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D97EEF11A1C9EE200DCF863 /* uart.c in Sources */ = {isa = PBXBuildFile; fileRef = 1D97EEEF1A1C9EE200DCF863 /* uart.c */; };
+		1D97EEF41A1CA09100DCF863 /* i2c.c in Sources */ = {isa = PBXBuildFile; fileRef = 1D97EEF21A1CA09100DCF863 /* i2c.c */; };
+		1D9CF0E21A28E3BF00A6E20F /* lcd.c in Sources */ = {isa = PBXBuildFile; fileRef = 1D9CF0E01A28E3BF00A6E20F /* lcd.c */; };
+		1D9CF0E51A28EB4800A6E20F /* neopixel.c in Sources */ = {isa = PBXBuildFile; fileRef = 1D9CF0E31A28EB4800A6E20F /* neopixel.c */; };
 		1DA8E2791A193243003A4011 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8E2781A193243003A4011 /* main.c */; };
 		1DA8E27C1A193243003A4011 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8E27B1A193243003A4011 /* Makefile */; };
 		1DA8E2901A193467003A4011 /* GPS.c in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8E28E1A193467003A4011 /* GPS.c */; };
@@ -15,6 +19,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D97EEEF1A1C9EE200DCF863 /* uart.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = uart.c; sourceTree = "<group>"; };
+		1D97EEF01A1C9EE200DCF863 /* uart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uart.h; sourceTree = "<group>"; };
+		1D97EEF21A1CA09100DCF863 /* i2c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = i2c.c; sourceTree = "<group>"; };
+		1D97EEF31A1CA09100DCF863 /* i2c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = i2c.h; sourceTree = "<group>"; };
+		1D9CF0E01A28E3BF00A6E20F /* lcd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lcd.c; sourceTree = "<group>"; };
+		1D9CF0E11A28E3BF00A6E20F /* lcd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lcd.h; sourceTree = "<group>"; };
+		1D9CF0E31A28EB4800A6E20F /* neopixel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = neopixel.c; sourceTree = "<group>"; };
+		1D9CF0E41A28EB4800A6E20F /* neopixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = neopixel.h; sourceTree = "<group>"; };
+		1D9CF0E61A28EC0A00A6E20F /* neopixel_setup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = neopixel_setup.h; sourceTree = "<group>"; };
 		1DA8E2751A193243003A4011 /* Index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Index; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA8E2781A193243003A4011 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		1DA8E27B1A193243003A4011 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -48,11 +61,20 @@
 			children = (
 				1DA8E2781A193243003A4011 /* main.c */,
 				1DA8E28E1A193467003A4011 /* GPS.c */,
+				1D97EEF21A1CA09100DCF863 /* i2c.c */,
 				1DA8E2911A1934D2003A4011 /* MCP9808.c */,
 				1DA8E2941A193687003A4011 /* LSM303.c */,
-				1DA8E2951A193687003A4011 /* LSM303.h */,
-				1DA8E2921A1934D2003A4011 /* MCP9808.h */,
+				1D9CF0E31A28EB4800A6E20F /* neopixel.c */,
+				1D9CF0E01A28E3BF00A6E20F /* lcd.c */,
+				1D97EEEF1A1C9EE200DCF863 /* uart.c */,
+				1D97EEF01A1C9EE200DCF863 /* uart.h */,
 				1DA8E28F1A193467003A4011 /* GPS.h */,
+				1DA8E2951A193687003A4011 /* LSM303.h */,
+				1D97EEF31A1CA09100DCF863 /* i2c.h */,
+				1DA8E2921A1934D2003A4011 /* MCP9808.h */,
+				1D9CF0E11A28E3BF00A6E20F /* lcd.h */,
+				1D9CF0E41A28EB4800A6E20F /* neopixel.h */,
+				1D9CF0E61A28EC0A00A6E20F /* neopixel_setup.h */,
 				1DA8E27A1A193243003A4011 /* Makefiles */,
 			);
 			path = NEOGEO;
@@ -192,8 +214,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DA8E2901A193467003A4011 /* GPS.c in Sources */,
+				1D9CF0E21A28E3BF00A6E20F /* lcd.c in Sources */,
+				1D97EEF11A1C9EE200DCF863 /* uart.c in Sources */,
 				1DA8E27C1A193243003A4011 /* Makefile in Sources */,
+				1D97EEF41A1CA09100DCF863 /* i2c.c in Sources */,
 				1DA8E2961A193687003A4011 /* LSM303.c in Sources */,
+				1D9CF0E51A28EB4800A6E20F /* neopixel.c in Sources */,
 				1DA8E2791A193243003A4011 /* main.c in Sources */,
 				1DA8E2931A1934D2003A4011 /* MCP9808.c in Sources */,
 			);
@@ -371,6 +397,7 @@
 				1DA8E2811A193243003A4011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DA8E2821A193243003A4011 /* Build configuration list for PBXLegacyTarget "Build" */ = {
 			isa = XCConfigurationList;
@@ -379,6 +406,7 @@
 				1DA8E2841A193243003A4011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DA8E2851A193243003A4011 /* Build configuration list for PBXLegacyTarget "Upload" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +415,7 @@
 				1DA8E2871A193243003A4011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DA8E2881A193243003A4011 /* Build configuration list for PBXLegacyTarget "Clean" */ = {
 			isa = XCConfigurationList;
@@ -395,6 +424,7 @@
 				1DA8E28A1A193243003A4011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DA8E28B1A193243003A4011 /* Build configuration list for PBXNativeTarget "Index" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +433,7 @@
 				1DA8E28D1A193243003A4011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

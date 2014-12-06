@@ -11,7 +11,7 @@
 
 
 char read_temperature(char);
-void mcp_init(void);
+void mcp_init(char);
 
 
 
