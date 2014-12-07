@@ -47,30 +47,20 @@ int main(void)
     avr_uart_init();
     gps_init();
    
-  
+ 
 lcd_command(0x01);
     
     while(1)
     {
-        if(j==5)Send_string(buffer);
     }
 
 }
 
-
 ISR(USART1_RX_vect)
 {
- 
       value=UDR1;
-    if(value=='$')i=1;
-    {
-        buffer[j]=value;
-        j++;
-    }
-    if(value=='\n'){lcd_data(0x41);j=0;}
-        
-    
-    
+    if()
+    lcd_data(value);
 }
 
 
