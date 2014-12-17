@@ -28,8 +28,7 @@ void mcp_init(char AddressByte)
 {
     char UpperByte=0,LowerByte=0;
     
-    UpperByte |=0x0;
-    LowerByte |=0x0;
+ 
     
     //i2c_start(address);                                           // send START command
     
@@ -44,49 +43,79 @@ void mcp_init(char AddressByte)
 
 
 
-
-
-
-
-char read_temperature(char AddressByte)
+uint8_t MCP9808_read_temp(void)
 {
+    uint8_t upper=0,lower=0,temp=0;;
     
-    unsigned char UpperByte=0,LowerByte=0,Temperature=0;
-    //i2c_start(address);                                           // send START command
-    i2c_write (AddressByte & 0xFE);                                     //WRITE Command (see Section 4.1.4 ìAddress Byteî)
-    //also, make sure bit 0 is cleared ë0í
-    i2c_write(0x05);                                                // Write TA Register Address
-    //i2c_start(address);                                           //Repeat START
-    i2c_write(AddressByte | 0x01);                                      // READ Command (see Section 4.1.4 ìAddress Byteî)
-    //also, make sure bit 0 is Set ë1í
-    UpperByte =i2c_readAck;                                         // READ 8 bits
-    //and Send ACK bit
-    LowerByte = i2c_readNak();                                      // READ 8 bits
-    //and Send NAK bit
-    i2c_stop();                                                     // send STOP command
-    //Convert the temperature data
-    //First Check flag bits
-    if ((UpperByte & 0x80) == 0x80)
-    {
-        //TA 3 TCRIT
-    }
-    if ((UpperByte & 0x40) == 0x40)
-    {
-        //TA > TUPPER
-    }
-    if ((UpperByte & 0x20) == 0x20)
-    {
-        //TA < TLOWER
-    }
+   
+    i2c_start(0x30 & 0xFE);
+    i2c_write(MCP9808_REG_AMBIENT_TEMP);                                /* Ta register address  */
+    i2c_stop();
+    i2c_start(0x30 | 0x01);                                             /* repstart for reading */
     
-    UpperByte = UpperByte & 0x1F;                                   //Clear flag bits
-    if ((UpperByte & 0x10) == 0x10)
-    { //TA < 0∞C
-        UpperByte = UpperByte & 0x0F;                               //Clear SIGN
-        Temperature = 256 - (UpperByte * 16 + LowerByte / 16);
-    }
-    else //TA 3 0∞C
-        Temperature = (UpperByte * 16 + LowerByte / 16);
+    //    temp=i2c_read_16(MCP9808_REG_AMBIENT_TEMP);
     
-    return (Temperature);
+    
+    upper=i2c_readAck();
+    lower=i2c_readAck();
+    
+    upper=upper & 0x1F;                                                 /* clear flag bits      */
+    
+    if(upper & 0x10)
+    {
+        upper=upper & 0x0F;                                             /* clear sign           */
+        
+        temp=((upper<<4)+(lower>>4));
+    }
+    else
+        temp=256-((upper<<4)+(lower>>4));
+              
+    return temp;
 }
+
+uint16_t i2c_read_16(uint8_t reg)
+{
+    uint16_t val;
+    
+    i2c_start(0x30 & 0xFE);
+    i2c_write((uint8_t)reg);
+    i2c_stop();
+    
+    i2c_start(0x30 | 0x01);
+    val = i2c_readAck();
+    val <<= 8;
+    val |= i2c_readNak();
+    return val;  
+}
+
+
+float Adafruit_MCP9808readTempC( void )
+{
+    uint16_t t = i2c_read_16(MCP9808_REG_AMBIENT_TEMP);
+    
+    float temp = t & 0x0FFF;
+    temp /=  16.0;
+    if (t & 0x1000) temp -= 256;
+    
+    return temp;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

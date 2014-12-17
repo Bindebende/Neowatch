@@ -49,5 +49,28 @@
 #define PGCMD_ANTENNA "$PGCMD,33,1*6C"
 #define PGCMD_NOANTENNA "$PGCMD,33,0*6C"
 
+
+extern volatile uint8_t count,buffer[100],second,minute,hour,second1,minute1,hour1,old_second,old_minute,old_hour,second2,minute2,hour2;
+ extern volatile uint8_t value,buffer_index;
+
+
+
+
 void gps_init(void);
+void gps_send(char[]);
+uint8_t gps_recive(char *);
+uint8_t strlength(char* );
+uint8_t comma_counter(uint8_t,char*);
+void array_NULLing(char*);
+uint8_t copy_from_message(uint8_t, char *,char*);
+uint8_t GGA_message_check(char *,char *,char *,char *,char *,char *,char *);
+void RMC_message_check(char *,char *);
+uint8_t sync(void);
+void clock(void);
+void number_to_array(int , uint8_t *);
+
+
+
+
+
 #endif /* defined(__NEOGEO__GPS__) */
