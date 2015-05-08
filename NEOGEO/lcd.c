@@ -95,14 +95,3 @@ void gotoXY(uint8_t y,uint8_t x)
     
     lcd_command(y);
 }
-//void goto_row(uint8_t y)
-//{
-//    switch(y)
-//    {
-//        case    0 : y=0x00+0x80;break;
-//        case    1 : y=0x40+0x80;break;
-//        case    2 : y=0x20+0x80;break;
-//        case    3 : y=0x84+0x80;break;
-//    }
-
-//}

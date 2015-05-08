@@ -41,7 +41,7 @@ void array_NULLing(char* array)
 
 
 
-uint8_t comma_counter(uint8_t comma, char* message)
+uint8_t comma_counter(uint8_t comma, const char* message)
 {
     uint8_t i=0;
     while(comma)						/* i variable will be the first index of the of the speed value when the                    while loop executes  */
@@ -201,7 +201,7 @@ uint8_t GGA_message_check(char *message,char *time,char *Latitude,char *N_S_Indi
 void clock(void)
 {
     /*clock fgv maga az ora mukodese */
-    
+/*
     second1++;
     
     if(second1>'9')
@@ -235,7 +235,7 @@ void clock(void)
         second2++;
         second1='0';
     }
-
+*/
 }
 
 void number_to_array(int number, uint8_t *array_ptr)
@@ -252,38 +252,6 @@ void number_to_array(int number, uint8_t *array_ptr)
     for(i=0;i<6;i++)printf("array:%d\n",*(array_ptr+i));
 }
 
-uint8_t sync(void)
-{
-    uint8_t j;
-    if(buffer[buffer_index]=='$')
-    {
-        //            Send_string(buffer);
-        gotoXY(0, 0);
-        for(j=0;j<100;j++) if(buffer[j]=='G' && buffer[j+1]=='G' && buffer[j+2]=='A')
-        {
-            /*  hour=(buffer[j+4]*10);
-             hour+=buffer[j+5];
-             minute=(buffer[j+6]*10);
-             minute+=buffer[j+7];
-             second=(buffer[j+8]*10);
-             second+=buffer[j+9];
-             
-             old_hour=hour;
-             old_minute=minute;
-             old_second=second;
-             */
-            
-            
-            hour2=buffer[j+4];
-            hour1=buffer[j+5];
-            minute2=buffer[j+6];
-            minute1=buffer[j+7];
-            second2=buffer[j+8];
-            second1=buffer[j+9];
-
-        }
-    }
-}
 
 
 

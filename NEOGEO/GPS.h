@@ -60,7 +60,7 @@ void gps_init(void);
 void gps_send(char[]);
 uint8_t gps_recive(char *);
 uint8_t strlength(char* );
-uint8_t comma_counter(uint8_t,char*);
+uint8_t comma_counter(uint8_t,const char*);
 void array_NULLing(char*);
 uint8_t copy_from_message(uint8_t, char *,char*);
 uint8_t GGA_message_check(char *,char *,char *,char *,char *,char *,char *);

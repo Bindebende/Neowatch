@@ -12,6 +12,8 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
+#define brightness 20
+
 void inline ws2812_setleds(struct cRGB *ledarray, uint16_t leds)
 {
     ws2812_setleds_pin(ledarray,leds, _BV(ws2812_pin));
@@ -166,6 +168,33 @@ void inline ws2812_sendarray_mask(uint8_t *data,uint16_t datlen,uint8_t maskhi)
     
     SREG=sreg_prev;
 }
+
+void led_ertekadas(uint8_t ertek, uint8_t R, uint8_t G, uint8_t B)
+{
+    uint8_t i;
+   
+    if(ertek==12)                           //kinullazas
+    {
+        for(i=0;i<12;i++)
+        {
+            
+                led[i].r=0;led[i].g=0;led[i].b=0;
+        
+        }
+
+    
+    }
+    
+    for(i=0;i<12;i++)
+    {
+        if(ertek==i)
+        {
+            led[i].r=brightness*R;led[i].g=brightness*G;led[i].b=brightness*B;
+        }
+    }
+}
+
+
 
 /*  if(binary_semaphore_button)if(i!=count){a=count;lcd_command(0x01);}else{}
  

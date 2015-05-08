@@ -73,22 +73,6 @@ uint8_t MCP9808_read_temp(void)
     return temp;
 }
 
-uint16_t i2c_read_16(uint8_t reg)
-{
-    uint16_t val;
-    
-    i2c_start(0x30 & 0xFE);
-    i2c_write((uint8_t)reg);
-    i2c_stop();
-    
-    i2c_start(0x30 | 0x01);
-    val = i2c_readAck();
-    val <<= 8;
-    val |= i2c_readNak();
-    return val;  
-}
-
-
 float Adafruit_MCP9808readTempC( void )
 {
     uint16_t t = i2c_read_16(MCP9808_REG_AMBIENT_TEMP);

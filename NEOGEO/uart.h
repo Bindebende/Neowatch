@@ -28,6 +28,6 @@ uint8_t avr_uart_receive_byte(void);
 void avr_uart_send_byte(uint8_t tx_byte);
 
 
-
+extern volatile uint8_t buffer[100],buffer_index;
 
 #endif

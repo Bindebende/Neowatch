@@ -17,7 +17,6 @@ void i2c_stop(void);
 unsigned char i2c_write( unsigned char data);
 unsigned char i2c_readAck(void);
 unsigned char i2c_readNak(void);
-
-
+uint16_t i2c_read_16(uint8_t reg);
 
 #endif /* defined(__NEOGEO__i2c__) */

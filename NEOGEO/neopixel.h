@@ -38,7 +38,7 @@ struct cRGB { uint8_t g; uint8_t r; uint8_t b; };
 
 void ws2812_setleds    (struct cRGB *ledarray, uint16_t number_of_leds);
 void ws2812_setleds_pin(struct cRGB *ledarray, uint16_t number_of_leds,uint8_t pinmask);
-
+void led_ertekadas(uint8_t ertek, uint8_t R, uint8_t G, uint8_t B);
 /*
  * Old interface / Internal functions
  *
@@ -49,6 +49,8 @@ void ws2812_setleds_pin(struct cRGB *ledarray, uint16_t number_of_leds,uint8_t p
 void ws2812_sendarray     (uint8_t *array,uint16_t length);
 void ws2812_sendarray_mask(uint8_t *array,uint16_t length, uint8_t pinmask);
 
+
+struct cRGB led[12];
 
 /*
  * Internal defines
