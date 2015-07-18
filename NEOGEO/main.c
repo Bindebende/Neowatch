@@ -60,9 +60,14 @@ int main(void)
         
         switch(mode)
         {
-            case 0 : led_set_Task();break;
-            case 1 : temperature_display_Task();break;
+            case 0 : led_set_Task();
+                break;
+            
+            case 1 : temperature_display_Task();
+                break;
+            
             case 2 : compass_Task();
+                break;
         }
         
     }
