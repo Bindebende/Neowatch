@@ -12,7 +12,7 @@
 #include <stdio.h>
 
 void beolv(void);
-void led_set_Task(void);//uint8_t* ,uint8_t* ,uint8_t* );
+void led_set_Task(void);
 void temperature_display_Task(void);
 void compass_Task(void);
 

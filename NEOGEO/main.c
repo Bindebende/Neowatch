@@ -13,11 +13,6 @@
 #include "ora.h"
 #include <math.h>
 
-
-
-
-
-
 volatile uint8_t buffer[100], buffer_index, mode;
 
 
@@ -41,16 +36,16 @@ int main(void)
     
     
     
-   // lcd_init(0x02);                                     //sima lcd initbol jon a 0x02;
+   // lcd_init(0x02);                                       /* 0x02 from the LCD datasheets         */
    // lcd_backlight(1);
    // lcd_command(0x01);
    // lcd_command(0x01);
     
     
-    PCMSK0 |= (1<<PCINT4);                              // PCINT4 = PB4
-    PCICR  |= (1<<PCIE0);                               //Enable Pin change interrupt
+    PCMSK0 |= (1<<PCINT4);                                  /* PCINT4 = PB4                         */
+    PCICR  |= (1<<PCIE0);                                   /* Enable Pin change interrupt          */
     
-    sei();
+    sei();                                                  /* global interrupt enable              */
     
     //lcd_command(0x01);
     
@@ -58,7 +53,7 @@ int main(void)
     {
         beolv();
         
-        switch(mode)
+        switch(mode)                                        /* switch betwen "tasks" or modes       */
         {
             case 0 : led_set_Task();
                 break;
@@ -73,10 +68,3 @@ int main(void)
     }
     
 }
-    
-
-//asdasd
-
-
-
-

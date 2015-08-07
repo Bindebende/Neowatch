@@ -11,7 +11,7 @@
 
 void i2c_init(void);
 unsigned char i2c_start(unsigned char adress);
-void i2c_start_wait(unsigned char address);	//addig cimez amig nem valaszol a slave
+void i2c_start_wait(unsigned char address);                        /* polling the slave till it responds */
 unsigned char i2c_rep_start(unsigned char address);
 void i2c_stop(void);
 unsigned char i2c_write( unsigned char data);

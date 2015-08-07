@@ -24,10 +24,10 @@ ISR(USART1_RX_vect)
     buffer_index++;
 }
 
-ISR(PCINT0_vect)                                    //61. oldal vectortabla
+ISR(PCINT0_vect)                                                        /* 61. page vectortable                         */
 {
     static uint8_t last_value;
-    uint8_t value = PINB;                          // read current input bits on Port B
+    uint8_t value = PINB;                                               /* read current input bits on Port B            */
     uint8_t changed_bits = value ^ last_value;
     
     last_value = value;

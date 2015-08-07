@@ -173,7 +173,7 @@ void led_ertekadas(uint8_t ertek, uint8_t R, uint8_t G, uint8_t B)
 {
     uint8_t i;
    
-    if(ertek==12)                           //kinullazas
+    if(ertek==12)                                                               /* filed with zeros to clean the array */
     {
         for(i=0;i<12;i++)
         {
@@ -193,54 +193,3 @@ void led_ertekadas(uint8_t ertek, uint8_t R, uint8_t G, uint8_t B)
         }
     }
 }
-
-
-
-/*  if(binary_semaphore_button)if(i!=count){a=count;lcd_command(0x01);}else{}
- 
- else
- {
- Send_string("buttom pressed");
- 
- for(i=0;i<12;i++)
- {
- led[i].r=0xFF;
- led[i].g=0xFF;
- led[i].b=0xFF;
- ws2812_setleds(led,12);
- _delay_ms(20);
- }
- 
- for(i=0;i<12;i++)
- {
- led[i].r=102;
- led[i].g=51;
- led[i].b=0;
- ws2812_setleds(led,12);
- _delay_ms(20);
- }
- 
- for(i=0;i<12;i++)
- {
- led[i].r=204;
- led[i].g=204;
- led[i].b=0;
- ws2812_setleds(led,12);
- _delay_ms(20);
- }
- 
- for(i=0;i<12;i++)
- {
- led[i].r=0xFF;
- led[i].g=00;
- led[i].b=0xCC;
- ws2812_setleds(led,12);
- _delay_ms(20);
- }
- 
- 
- }
- 
- // lcd_data('b');
- 
- */

@@ -63,13 +63,9 @@ void uart_send_string(const uint8_t *p)
     }
 }
 
-
-
-
 ISR(USART1_TX_vect)
 {
-//    UDR1='\n';
-//    UCSR1B&=~(1<<TXCIE1);
+
     
 }
 

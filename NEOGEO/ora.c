@@ -88,7 +88,7 @@ void beolv(void)
 
 
 
-void led_set_Task(void)//uint8_t* led_sec_index,uint8_t* led_min_index,uint8_t* led_hour_index)
+void led_set_Task(void)
 {
     uint8_t led_sec_index=0,led_min_index=0,led_hour_index=0,i=0;
     const uint8_t led_numbers=12,nullazas=12;
@@ -412,17 +412,3 @@ void compass_Task(void)
 
 
 }
-
-//
-
-
-
-
-
-
-
-
-
-
-
-
